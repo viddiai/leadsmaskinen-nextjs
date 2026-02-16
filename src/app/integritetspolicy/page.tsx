@@ -9,7 +9,7 @@ const POLICY_EMAIL = "policy@leadsmaskinen.io";
 
 export default function IntegritetspolicyPage() {
   return (
-    <SectionWrapper className="min-h-screen pt-32 pb-20">
+    <SectionWrapper className="min-h-screen pt-48 pb-20">
       <div className="mx-auto max-w-3xl">
         <h1 className="text-h1 font-[family-name:var(--font-display)] font-extrabold text-graphite">
           Integritetspolicy
