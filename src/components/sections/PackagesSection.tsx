@@ -54,9 +54,12 @@ function PricingCard({
         </ul>
 
         <Button
-          href="#cta-final"
           variant={pkg.popular ? "primary" : "secondary"}
           fullWidth
+          onClick={() => {
+            // @ts-expect-error Calendly is loaded externally
+            window.Calendly?.initPopupWidget({ url: "https://calendly.com/stefan-245/30min" });
+          }}
         >
           {pkg.cta}
         </Button>

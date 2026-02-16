@@ -68,7 +68,13 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
-          <Button href="#cta-final" size="sm">
+          <Button
+            size="sm"
+            onClick={() => {
+              // @ts-expect-error Calendly is loaded externally
+              window.Calendly?.initPopupWidget({ url: "https://calendly.com/stefan-245/30min" });
+            }}
+          >
             Boka konsultation
           </Button>
         </div>
@@ -102,9 +108,12 @@ export function Navbar() {
               </a>
             ))}
             <Button
-              href="#cta-final"
               fullWidth
-              onClick={() => setIsMobileOpen(false)}
+              onClick={() => {
+                setIsMobileOpen(false);
+                // @ts-expect-error Calendly is loaded externally
+                window.Calendly?.initPopupWidget({ url: "https://calendly.com/stefan-245/30min" });
+              }}
             >
               Boka konsultation
             </Button>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Poppins } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -59,7 +60,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sv" className={`${inter.variable} ${poppins.variable}`}>
+      <head>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+      </head>
       <body className="bg-white text-graphite antialiased">
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+        />
         <StructuredData />
         <Navbar />
         <main>{children}</main>

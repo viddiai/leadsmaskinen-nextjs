@@ -50,7 +50,13 @@ export function HeroSection() {
 
         <AnimateOnScroll delay={0.3}>
           <div className="mt-10">
-            <Button href="#cta-final" size="lg">
+            <Button
+              size="lg"
+              onClick={() => {
+                // @ts-expect-error Calendly is loaded externally
+                window.Calendly?.initPopupWidget({ url: "https://calendly.com/stefan-245/30min" });
+              }}
+            >
               {HERO.cta} &rarr;
             </Button>
           </div>

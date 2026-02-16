@@ -8,7 +8,6 @@ import { ComparisonSection } from "@/components/sections/ComparisonSection";
 import { IdealClientSection } from "@/components/sections/IdealClientSection";
 import { GuideSection } from "@/components/sections/GuideSection";
 import { FaqSection } from "@/components/sections/FaqSection";
-import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 
 export default function Home() {
   return (
@@ -23,7 +22,6 @@ export default function Home() {
       <PackagesSection />
       <GuideSection />
       <FaqSection />
-      <FinalCtaSection />
     </>
   );
 }
