@@ -19,7 +19,7 @@ export const HERO = {
   title: "Ersättning för resultat, inte timmar",
   tagline: "Idealkunder in. Affärer ut.",
   subtitle:
-    "Vi bygger nichade portaler som ökar konvertering, kvalificerar målgruppen och skapar en förutsägbar pipeline. Inga onödiga funktioner, bara det som driver affärer.",
+    "Vi bygger nichade portaler och landningssidor som ökar konvertering, kvalificerar målgruppen och skapar en förutsägbar pipeline. Inga onödiga funktioner, bara det som driver affärer.",
   cta: "Boka konsultation: få fler kvalificerade leads",
 } as const;
 
