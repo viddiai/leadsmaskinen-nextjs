@@ -8,9 +8,15 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-white-soft to-white"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      {/* Jigsaw pattern background */}
+      {/* Full-width hero image background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url(/hero_image.webp)" }}
+      />
+
+      {/* Jigsaw pattern overlay */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -19,28 +25,15 @@ export function HeroSection() {
         }}
       />
 
-      {/* Subtle decorative circles */}
-      <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-orange/5 blur-3xl" />
-      <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-orange/5 blur-3xl" />
-
+      {/* Text content on translucent plate */}
       <div
-        className="relative mx-auto flex flex-col items-center"
+        className="relative mx-auto flex items-center justify-center"
         style={{
           maxWidth: "var(--max-w-content)",
-          padding: "7rem clamp(1rem, 3vw, 2rem) 4rem",
+          padding: "8rem clamp(1rem, 3vw, 2rem) 4rem",
         }}
       >
-        {/* Hero illustration */}
-        <AnimateOnScroll>
-          <img
-            src="/hero_image.webp"
-            alt="Leadgenereringsprocess – från idealkund till affär"
-            className="mx-auto mb-10 w-full max-w-3xl"
-          />
-        </AnimateOnScroll>
-
-        {/* Text content on white plate */}
-        <div className="rounded-2xl bg-white/90 px-8 py-10 text-center shadow-sm backdrop-blur-sm sm:px-12">
+        <div className="rounded-2xl bg-white/70 px-8 py-10 text-center shadow-lg backdrop-blur-md sm:px-12">
           <AnimateOnScroll>
             <h1 className="text-hero mx-auto max-w-4xl font-[family-name:var(--font-display)] font-extrabold text-graphite">
               {HERO.title}
