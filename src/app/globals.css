@@ -40,7 +40,7 @@ body {
 
 /* Fluid typography utilities */
 .text-hero {
-  font-size: clamp(3.375rem, 7.5vw, 6.75rem);
+  font-size: clamp(2.025rem, 4.5vw, 4.05rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
