@@ -8,15 +8,9 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-white-soft to-white"
     >
-      {/* Full-width hero image background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/hero_image.webp)" }}
-      />
-
-      {/* Jigsaw pattern overlay */}
+      {/* Jigsaw pattern background */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -25,14 +19,18 @@ export function HeroSection() {
         }}
       />
 
-      {/* Text content on translucent plate */}
+      {/* Subtle decorative circles */}
+      <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-orange/5 blur-3xl" />
+      <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-orange/5 blur-3xl" />
+
       <div
-        className="relative mx-auto flex items-center justify-center"
+        className="relative mx-auto flex flex-col items-center"
         style={{
           maxWidth: "var(--max-w-content)",
-          padding: "8rem clamp(1rem, 3vw, 2rem) 4rem",
+          padding: "7rem clamp(1rem, 3vw, 2rem) 4rem",
         }}
       >
+        {/* Text plate first (on top) */}
         <div className="rounded-2xl bg-white/70 px-8 py-10 text-center shadow-lg backdrop-blur-md sm:px-12">
           <AnimateOnScroll>
             <h1 className="text-hero mx-auto max-w-4xl font-[family-name:var(--font-display)] font-extrabold text-graphite">
@@ -66,6 +64,16 @@ export function HeroSection() {
             </div>
           </AnimateOnScroll>
         </div>
+
+        {/* Hero illustration below the plate, 70% width centered */}
+        <AnimateOnScroll delay={0.2}>
+          <img
+            src="/hero_image.webp"
+            alt="Leadgenereringsprocess – från idealkund till affär"
+            className="mx-auto mt-10"
+            style={{ width: "70%" }}
+          />
+        </AnimateOnScroll>
       </div>
     </section>
   );
