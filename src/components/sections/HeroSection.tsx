@@ -24,44 +24,55 @@ export function HeroSection() {
       <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-orange/5 blur-3xl" />
 
       <div
-        className="relative mx-auto text-center"
+        className="relative mx-auto flex flex-col items-center"
         style={{
           maxWidth: "var(--max-w-content)",
-          padding: "8rem clamp(1rem, 3vw, 2rem) 4rem",
+          padding: "7rem clamp(1rem, 3vw, 2rem) 4rem",
         }}
       >
+        {/* Hero illustration */}
         <AnimateOnScroll>
-          <h1 className="text-hero mx-auto max-w-4xl font-[family-name:var(--font-display)] font-extrabold text-graphite">
-            {HERO.title}
-          </h1>
+          <img
+            src="/hero_image.webp"
+            alt="Leadgenereringsprocess – från idealkund till affär"
+            className="mx-auto mb-10 w-full max-w-3xl"
+          />
         </AnimateOnScroll>
 
-        <AnimateOnScroll delay={0.1}>
-          <p className="text-hero mx-auto mt-2 max-w-4xl font-[family-name:var(--font-display)] font-extrabold text-graphite/20">
-            {HERO.tagline}
-          </p>
-        </AnimateOnScroll>
+        {/* Text content on white plate */}
+        <div className="rounded-2xl bg-white/90 px-8 py-10 text-center shadow-sm backdrop-blur-sm sm:px-12">
+          <AnimateOnScroll>
+            <h1 className="text-hero mx-auto max-w-4xl font-[family-name:var(--font-display)] font-extrabold text-graphite">
+              {HERO.title}
+            </h1>
+          </AnimateOnScroll>
 
-        <AnimateOnScroll delay={0.2}>
-          <p className="text-body-lg mx-auto mt-8 max-w-2xl text-steel">
-            {HERO.subtitle}
-          </p>
-        </AnimateOnScroll>
+          <AnimateOnScroll delay={0.1}>
+            <p className="text-hero mx-auto mt-2 max-w-4xl font-[family-name:var(--font-display)] font-extrabold text-graphite/20">
+              {HERO.tagline}
+            </p>
+          </AnimateOnScroll>
 
-        <AnimateOnScroll delay={0.3}>
-          <div className="mt-10">
-            <Button
-              size="lg"
-              onClick={() => {
-                // @ts-expect-error Calendly is loaded externally
-                window.Calendly?.initPopupWidget({ url: "https://calendly.com/stefan-245/30min" });
-              }}
-            >
-              {HERO.cta} &rarr;
-            </Button>
-          </div>
-        </AnimateOnScroll>
+          <AnimateOnScroll delay={0.2}>
+            <p className="text-body-lg mx-auto mt-8 max-w-2xl text-steel">
+              {HERO.subtitle}
+            </p>
+          </AnimateOnScroll>
 
+          <AnimateOnScroll delay={0.3}>
+            <div className="mt-10">
+              <Button
+                size="lg"
+                onClick={() => {
+                  // @ts-expect-error Calendly is loaded externally
+                  window.Calendly?.initPopupWidget({ url: "https://calendly.com/stefan-245/30min" });
+                }}
+              >
+                {HERO.cta} &rarr;
+              </Button>
+            </div>
+          </AnimateOnScroll>
+        </div>
       </div>
     </section>
   );
