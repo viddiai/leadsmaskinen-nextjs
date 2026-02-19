@@ -48,8 +48,8 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   icons: {
-    icon: "/logo_L.png",
-    apple: "/logo_L.png",
+    icon: "/logo_circle.webp",
+    apple: "/logo_circle.webp",
   },
 };
 

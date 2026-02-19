@@ -49,7 +49,7 @@ export function Navbar() {
           href="#"
           className="flex items-center gap-2 font-[family-name:var(--font-display)] text-xl font-bold text-graphite"
         >
-          <img src="/logo_L.png" alt="" className="h-8 w-auto" />
+          <img src="/logo_circle.webp" alt="" className="h-8 w-auto" />
           <span>Leads<span className="text-orange">maskinen</span></span>
         </a>
 
