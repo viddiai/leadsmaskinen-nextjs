@@ -8,7 +8,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen flex-col items-center justify-end overflow-hidden bg-gradient-to-b from-white-soft to-white"
+      className="relative flex min-h-screen flex-col items-center overflow-hidden bg-gradient-to-b from-white-soft to-white"
     >
       {/* Jigsaw pattern background */}
       <div
@@ -23,11 +23,14 @@ export function HeroSection() {
       <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-orange/5 blur-3xl" />
       <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-orange/5 blur-3xl" />
 
+      {/* Spacer pushes content down */}
+      <div className="flex-1" />
+
       <div
         className="relative mx-auto flex flex-col items-center"
         style={{
           maxWidth: "var(--max-w-content)",
-          padding: "7rem clamp(1rem, 3vw, 2rem) 0",
+          padding: "0 clamp(1rem, 3vw, 2rem)",
         }}
       >
         <div className="text-center">
