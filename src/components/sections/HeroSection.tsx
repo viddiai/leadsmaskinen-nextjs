@@ -27,7 +27,7 @@ export function HeroSection() {
         className="relative mx-auto flex flex-col items-center"
         style={{
           maxWidth: "var(--max-w-content)",
-          padding: "7rem clamp(1rem, 3vw, 2rem) 4rem",
+          padding: "7rem clamp(1rem, 3vw, 2rem) 0",
         }}
       >
         <div className="text-center">
@@ -71,8 +71,8 @@ export function HeroSection() {
         <img
           src="/hero_image.webp"
           alt="Leadgenereringsprocess – från idealkund till affär"
-          className="mx-auto mt-5 opacity-40"
-          style={{ width: "70vw" }}
+          className="mx-auto opacity-40"
+          style={{ width: "70vw", marginTop: "40px" }}
         />
       </AnimateOnScroll>
     </section>
