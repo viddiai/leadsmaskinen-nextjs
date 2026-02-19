@@ -65,16 +65,17 @@ export function HeroSection() {
           </AnimateOnScroll>
         </div>
 
-        {/* Hero illustration below the plate, 70% width centered */}
-        <AnimateOnScroll delay={0.2}>
-          <img
-            src="/hero_image.webp"
-            alt="Leadgenereringsprocess – från idealkund till affär"
-            className="mx-auto mt-10"
-            style={{ width: "70%" }}
-          />
-        </AnimateOnScroll>
       </div>
+
+      {/* Hero illustration – 70% of viewport width, semi-transparent */}
+      <AnimateOnScroll delay={0.2}>
+        <img
+          src="/hero_image.webp"
+          alt="Leadgenereringsprocess – från idealkund till affär"
+          className="mx-auto mt-10 opacity-40"
+          style={{ width: "70vw" }}
+        />
+      </AnimateOnScroll>
     </section>
   );
 }
