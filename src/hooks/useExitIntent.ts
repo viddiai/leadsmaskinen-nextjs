@@ -17,11 +17,12 @@ export function useExitIntent() {
 
   // Desktop: mouse leaves viewport upward
   useEffect(() => {
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0) show();
+    const handleMouseOut = (e: MouseEvent) => {
+      // Only trigger when mouse actually leaves the page (no relatedTarget)
+      if (!e.relatedTarget && e.clientY <= 0) show();
     };
-    document.addEventListener("mouseleave", handleMouseLeave);
-    return () => document.removeEventListener("mouseleave", handleMouseLeave);
+    document.addEventListener("mouseout", handleMouseOut);
+    return () => document.removeEventListener("mouseout", handleMouseOut);
   }, [show]);
 
   // Mobile fallback: user scrolls back up after scrolling 50%+ of page
