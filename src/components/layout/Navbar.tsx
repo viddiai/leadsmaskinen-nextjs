@@ -17,9 +17,20 @@ export function Navbar() {
     120
   );
 
+  // Detect if we're over the dark hero section
+  const [overDarkHero, setOverDarkHero] = useState(true);
+
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+      const hero = document.getElementById("hero");
+      if (hero) {
+        const heroBottom = hero.offsetTop + hero.offsetHeight;
+        setOverDarkHero(window.scrollY < heroBottom - 80);
+      }
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -43,10 +54,13 @@ export function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Light text when floating over the dark hero (not scrolled, no mobile menu)
+  const lightNav = overDarkHero && !isScrolled && !isMobileOpen;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-        isScrolled
+        isScrolled || isMobileOpen
           ? "bg-white/95 shadow-sm backdrop-blur-sm"
           : "bg-transparent"
       }`}
@@ -61,7 +75,9 @@ export function Navbar() {
         {/* Logo */}
         <a
           href="/"
-          className="flex items-center gap-2 font-[family-name:var(--font-display)] text-xl font-bold text-graphite"
+          className={`flex items-center gap-2 font-[family-name:var(--font-display)] text-xl font-bold transition-colors ${
+            lightNav ? "text-white" : "text-graphite"
+          }`}
         >
           <img src="/logo_circle.webp" alt="" className="h-8 w-auto" />
           <span>Leads<span className="text-orange">maskinen</span></span>
@@ -77,7 +93,9 @@ export function Navbar() {
             onMouseLeave={() => setIsServicesOpen(false)}
           >
             <button
-              className="flex items-center gap-1 text-sm font-medium text-steel transition-colors hover:text-graphite cursor-pointer"
+              className={`flex items-center gap-1 text-sm font-medium transition-colors cursor-pointer ${
+                lightNav ? "text-slate-300 hover:text-white" : "text-steel hover:text-graphite"
+              }`}
               onClick={() => setIsServicesOpen(!isServicesOpen)}
             >
               Tjänster
@@ -110,7 +128,9 @@ export function Navbar() {
               className={`text-sm font-medium transition-colors ${
                 activeId === link.href.replace("/#", "")
                   ? "text-orange"
-                  : "text-steel hover:text-graphite"
+                  : lightNav
+                    ? "text-slate-300 hover:text-white"
+                    : "text-steel hover:text-graphite"
               }`}
             >
               {link.label}
@@ -134,9 +154,9 @@ export function Navbar() {
           aria-label="Toggle menu"
         >
           {isMobileOpen ? (
-            <X className="h-6 w-6 text-graphite" />
+            <X className={`h-6 w-6 ${lightNav ? "text-white" : "text-graphite"}`} />
           ) : (
-            <Menu className="h-6 w-6 text-graphite" />
+            <Menu className={`h-6 w-6 ${lightNav ? "text-white" : "text-graphite"}`} />
           )}
         </button>
       </nav>

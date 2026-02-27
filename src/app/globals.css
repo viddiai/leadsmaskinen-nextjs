@@ -16,6 +16,7 @@
   /* Typography */
   --font-display: "Poppins", sans-serif;
   --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
   /* Shadows */
   --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
@@ -70,4 +71,93 @@ body {
 .text-body-lg {
   font-size: clamp(1.125rem, 1.25vw, 1.25rem);
   line-height: 1.6;
+}
+
+/* ── Hero section animations & styles ── */
+
+@keyframes hero-slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes hero-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes hero-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.hero-slide-up {
+  animation: hero-slideUp 0.8s ease-out both;
+}
+
+.hero-fade-in {
+  animation: hero-fadeIn 0.6s ease-out both;
+}
+
+.hero-pulse {
+  animation: hero-pulse 2s ease-in-out infinite;
+}
+
+.hero-shimmer {
+  background: linear-gradient(90deg, #F26A3E, #F59E0B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: hero-shimmer 4s linear infinite;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: #F26A3E;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: all 0.25s ease;
+  box-shadow: 0 0 30px rgba(242, 106, 62, 0.3);
+  text-decoration: none;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(242, 106, 62, 0.5);
+  background: #E55A2E;
+}
+
+/* Hero responsive layout */
+.hero-layout {
+  flex-direction: row;
+}
+
+@media (max-width: 900px) {
+  .hero-layout {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .hero-layout .hero-left {
+    max-width: 100%;
+  }
+  .hero-layout .hero-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }

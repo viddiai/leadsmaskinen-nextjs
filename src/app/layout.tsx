@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Poppins, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ExitIntentModal } from "@/components/forms/ExitIntentModal";
@@ -17,6 +17,13 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["600", "700", "800"],
   variable: "--font-display",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -59,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sv" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="sv" className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
       </head>
