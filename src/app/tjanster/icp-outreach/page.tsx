@@ -101,7 +101,7 @@ export default function IcpOutreachPage() {
                 <span className="text-xs font-semibold uppercase tracking-wider text-orange">
                   Steg {s.step}
                 </span>
-                <h3 className="mt-2 font-[family-name:var(--font-display)] text-h3 font-bold text-graphite">
+                <h3 className="mt-2 font-[family-name:var(--font-display)] text-lg font-bold text-graphite">
                   {s.title}
                 </h3>
                 <p className="mt-2 text-sm text-steel leading-relaxed">

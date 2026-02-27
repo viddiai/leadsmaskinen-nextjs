@@ -96,7 +96,7 @@ export default function AutomationPage() {
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-orange-light">
                   <f.icon className="h-5 w-5 text-orange" />
                 </div>
-                <h3 className="font-[family-name:var(--font-display)] text-h3 font-bold text-graphite">
+                <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-graphite">
                   {f.title}
                 </h3>
                 <p className="mt-2 text-sm text-steel leading-relaxed">
