@@ -87,7 +87,8 @@ export function Navbar() {
             </button>
 
             {isServicesOpen && (
-              <div className="absolute left-1/2 top-full z-50 mt-2 w-56 -translate-x-1/2 rounded-lg border border-grey-light bg-white py-2 shadow-[var(--shadow-card-hover)]">
+              <div className="absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-2">
+              <div className="rounded-lg border border-grey-light bg-white py-2 shadow-[var(--shadow-card-hover)]">
                 {SERVICE_NAV_LINKS.map((link) => (
                   <a
                     key={link.href}
@@ -97,6 +98,7 @@ export function Navbar() {
                     {link.label}
                   </a>
                 ))}
+              </div>
               </div>
             )}
           </div>
