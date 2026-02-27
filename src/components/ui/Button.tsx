@@ -12,6 +12,7 @@ interface ButtonProps {
   href?: string;
   onClick?: () => void;
   fullWidth?: boolean;
+  disabled?: boolean;
   className?: string;
 }
 
@@ -36,13 +37,15 @@ export function Button({
   href,
   onClick,
   fullWidth = false,
+  disabled = false,
   className = "",
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-semibold uppercase tracking-wider rounded-md transition-all duration-150 ease-in-out cursor-pointer";
-  const styles = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${fullWidth ? "w-full" : ""} ${className}`;
+    "inline-flex items-center justify-center font-semibold uppercase tracking-wider rounded-md transition-all duration-150 ease-in-out";
+  const disabledStyles = disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer";
+  const styles = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${disabledStyles} ${fullWidth ? "w-full" : ""} ${className}`;
 
-  if (href) {
+  if (href && !disabled) {
     return (
       <Link href={href} className={styles}>
         {children}
@@ -51,7 +54,7 @@ export function Button({
   }
 
   return (
-    <button onClick={onClick} className={styles}>
+    <button onClick={onClick} disabled={disabled} className={styles}>
       {children}
     </button>
   );
