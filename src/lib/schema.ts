@@ -27,7 +27,7 @@ export function getServiceSchema() {
       "@type": "Service",
       name: "Portal (Premium)",
       description:
-        "Komplett nischportal med 5+ konverteringspunkter, ICP Persona Audit, cold email & LinkedIn-outreach, och marketing automation.",
+        "Komplett nischportal med 5+ konverteringspunkter, ICP Persona Workshop, cold email & LinkedIn-outreach, och marketing automation.",
       provider: { "@type": "Organization", name: SITE.name },
       offers: {
         "@type": "Offer",
@@ -41,7 +41,7 @@ export function getServiceSchema() {
       "@type": "Service",
       name: "Landningssida (Standard)",
       description:
-        "Fokuserad landningssida med ICP Persona Audit, cold email & LinkedIn-outreach, och marketing automation.",
+        "Fokuserad landningssida med ICP Persona Workshop, cold email & LinkedIn-outreach, och marketing automation.",
       provider: { "@type": "Organization", name: SITE.name },
       offers: {
         "@type": "Offer",

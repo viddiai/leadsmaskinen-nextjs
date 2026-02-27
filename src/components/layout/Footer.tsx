@@ -39,7 +39,7 @@ export function Footer() {
               </li>
               <li>
                 <a href="#process" className="hover:text-white transition-colors">
-                  ICP Persona Audit
+                  ICP Persona Workshop
                 </a>
               </li>
               <li>

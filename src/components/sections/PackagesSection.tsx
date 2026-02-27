@@ -87,7 +87,7 @@ export function PackagesSection() {
             <span className="font-semibold text-graphite">
               Inte redo för ett helt paket?
             </span>{" "}
-            Starta med en fristående ICP Persona Audit – 7 500 kr (avräknas om
+            Starta med en fristående ICP Persona Workshop – 7 500 kr (avräknas om
             du går vidare).
           </p>
         </div>

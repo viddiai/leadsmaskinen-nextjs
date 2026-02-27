@@ -84,7 +84,7 @@ export const PACKAGES = {
     priceNote: "Engångsavgift",
     delivery: "3 veckor",
     features: [
-      "ICP Persona Audit (inkluderad)",
+      "ICP Persona Workshop (inkluderad)",
       "Nischad portal med 5+ CTA:er",
       "ROI-kalkylator, audit, quiz, boka möte",
       "Cold email + LinkedIn-outreach",
@@ -102,7 +102,7 @@ export const PACKAGES = {
     priceNote: "Engångsavgift",
     delivery: "1 vecka",
     features: [
-      "ICP Persona Audit (inkluderad)",
+      "ICP Persona Workshop (inkluderad)",
       "Landningssida med 1 konverteringspunkt",
       "Cold email + LinkedIn-outreach",
       "1 marketing automation-funnel (5 mejl)",
@@ -183,12 +183,12 @@ export const FAQ_ITEMS = [
   {
     question: "Hur säkerställer ni kvaliteten på leads?",
     answer:
-      "Genom ICP Persona Audit definierar vi exakt din idealkund. Kvalitetsfilter och en gemensam dashboard ger full transparens – du ser varje lead i realtid.",
+      "Genom ICP Persona Workshop definierar vi exakt din idealkund. Kvalitetsfilter och en gemensam dashboard ger full transparens – du ser varje lead i realtid.",
   },
   {
     question: "Hur snabbt kan vi vara igång?",
     answer:
-      "Landningssida: 1 vecka. Portal: 3 veckor. Vi börjar med en ICP Persona Audit och har dina outbound-kampanjer och automation redo vid lansering.",
+      "Landningssida: 1 vecka. Portal: 3 veckor. Vi börjar med en ICP Persona Workshop och har dina outbound-kampanjer och automation redo vid lansering.",
   },
   {
     question: "Vad krävs av oss som kund?",
@@ -206,8 +206,8 @@ export const FAQ_ITEMS = [
       "Startavgiften täcker ICP-audit, portalbygge/landningssida, outbound-setup och automationskonfiguration. Det är ingen retainer – det är en engångsinvestering i din leadmotor.",
   },
   {
-    question: "Kan vi börja med bara en ICP Persona Audit?",
+    question: "Kan vi börja med bara en ICP Persona Workshop?",
     answer:
-      "Ja. En fristående ICP Persona Audit kostar 7 500 kr. Om du sedan väljer att gå vidare med ett paket räknas den av mot startavgiften.",
+      "Ja. En fristående ICP Persona Workshop kostar 7 500 kr. Om du sedan väljer att gå vidare med ett paket räknas den av mot startavgiften.",
   },
 ] as const;
