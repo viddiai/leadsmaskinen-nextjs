@@ -235,6 +235,13 @@ export default function KalkylatorPage() {
                 onChange={setDealValue}
               />
               <InputField
+                label="Marginal"
+                suffix="%"
+                value={marginPct}
+                onChange={setMarginPct}
+                tooltip="Din vinstmarginal på varje avslutad affär."
+              />
+              <InputField
                 label="Lead-ersättning MQL"
                 suffix="%"
                 value={mqlRate}
@@ -307,13 +314,6 @@ export default function KalkylatorPage() {
                 value={sqlDealPct}
                 onChange={setSqlDealPct}
                 tooltip="Hur stor andel av SQL-leads som konverterar till en avslutad affär."
-              />
-              <InputField
-                label="Marginal"
-                suffix="%"
-                value={marginPct}
-                onChange={setMarginPct}
-                tooltip="Din vinstmarginal på varje avslutad affär."
               />
             </div>
           </Card>
