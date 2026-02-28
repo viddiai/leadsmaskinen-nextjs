@@ -226,7 +226,7 @@ export default function KalkylatorPage() {
             { step: "1", label: "Kontaktade via e-post/LinkedIn", value: fmtSt(outreach) },
             { step: "2", label: "Besökare till portal/landningssida", value: fmtSt(calc.portalVisitors) },
             { step: "3", label: "Leads", value: fmtSt(calc.mqlLeads + calc.sqlLeads) },
-            { step: "4", label: "Bokade möten", value: fmtSt(calc.totalDeals) },
+            { step: "4", label: "Bokade möten", value: fmtSt(calc.sqlLeads) },
             { step: "5", label: "Affärer", value: fmtSt(calc.totalDeals) },
           ].flatMap((item, i, arr) => {
             const circle = (
