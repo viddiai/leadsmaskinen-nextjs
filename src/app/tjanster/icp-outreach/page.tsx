@@ -19,7 +19,7 @@ const STEPS = [
   {
     step: 1,
     icon: Target,
-    title: "ICP Persona Audit",
+    title: "ICP/Persona Workshop",
     description: "Vi definierar exakt vem vi ska nå.",
   },
   {
