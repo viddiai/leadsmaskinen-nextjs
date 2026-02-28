@@ -53,14 +53,14 @@ export const PROBLEMS = [
 export const PROCESS_STEPS = [
   {
     step: 1,
-    title: "Vi ringer inte 500 fel personer. Vi kontaktar 50 rätta.",
+    title: "50 rätt slår 500 fel.",
     description:
       "Din idealkund identifieras ner på titel, bransch och smärtpunkt. Sen når vi dem via cold email och LinkedIn – med ett budskap byggt för att få svar.",
     icon: "Target",
   },
   {
     step: 2,
-    title: "Besökaren får värde. Du får en lead.",
+    title: "Besökaren får värde. Du får ett lead.",
     description:
       "En ROI-kalkylator, en audit, en guide – något besökaren faktiskt vill ha. I utbyte lämnar de sina uppgifter. Det är ingen trickkonvertering, det är en affär båda vinner på.",
     icon: "LayoutTemplate",
