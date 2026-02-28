@@ -25,7 +25,7 @@ export default function WorkshopPage() {
   return (
     <>
       {/* Hero */}
-      <SectionWrapper background="gradient" className="pt-32">
+      <SectionWrapper background="gradient" className="pt-40">
         <div className="mx-auto max-w-3xl text-center">
           <AnimateOnScroll>
             <span className="inline-block rounded-full bg-orange-light px-4 py-1.5 text-sm font-medium text-orange">

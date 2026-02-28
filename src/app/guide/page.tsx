@@ -18,7 +18,7 @@ export default function GuidePage() {
   };
 
   return (
-    <SectionWrapper background="gradient" className="min-h-screen pt-32">
+    <SectionWrapper background="gradient" className="min-h-screen pt-40">
       <div className="mx-auto max-w-2xl text-center">
         <span className="inline-block rounded-full bg-orange-light px-4 py-1.5 text-sm font-medium text-orange">
           Gratis guide

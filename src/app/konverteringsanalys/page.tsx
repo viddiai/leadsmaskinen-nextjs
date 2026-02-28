@@ -214,7 +214,7 @@ function KonverteringsanalysContent() {
   const analyzer = useAnalyzer(initialUrl);
 
   return (
-    <SectionWrapper background="gradient" className="min-h-screen pt-32">
+    <SectionWrapper background="gradient" className="min-h-screen pt-40">
       <div className="mx-auto max-w-2xl">
         {/* Header - always visible */}
         <AnimateOnScroll>

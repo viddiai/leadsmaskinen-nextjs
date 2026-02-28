@@ -401,7 +401,7 @@ function ReportPageInner() {
   const { state, report, error } = useReport(id, token);
 
   return (
-    <SectionWrapper background="gradient" className="min-h-screen pt-32">
+    <SectionWrapper background="gradient" className="min-h-screen pt-40">
       <div className="mx-auto max-w-3xl">
         {/* Loading */}
         {state === "loading" && (
@@ -440,7 +440,7 @@ export default function RapportPage() {
   return (
     <Suspense
       fallback={
-        <SectionWrapper background="gradient" className="min-h-screen pt-32">
+        <SectionWrapper background="gradient" className="min-h-screen pt-40">
           <div className="mx-auto max-w-3xl">
             <Card className="py-12 text-center">
               <Loader2 className="mx-auto h-10 w-10 animate-spin text-orange" />

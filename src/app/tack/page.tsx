@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function TackPage() {
   return (
-    <SectionWrapper background="gradient" className="min-h-screen pt-32">
+    <SectionWrapper background="gradient" className="min-h-screen pt-40">
       <div className="mx-auto max-w-lg text-center">
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-success/10">
           <Check className="h-8 w-8 text-success" />

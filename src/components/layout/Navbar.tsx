@@ -18,7 +18,7 @@ export function Navbar() {
   );
 
   // Detect if we're over the dark hero section
-  const [overDarkHero, setOverDarkHero] = useState(true);
+  const [overDarkHero, setOverDarkHero] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +27,8 @@ export function Navbar() {
       if (hero) {
         const heroBottom = hero.offsetTop + hero.offsetHeight;
         setOverDarkHero(window.scrollY < heroBottom - 80);
+      } else {
+        setOverDarkHero(false);
       }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
