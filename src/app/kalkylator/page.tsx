@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { Info } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { Card } from "@/components/ui/Card";
@@ -46,6 +46,32 @@ function InputField({
   suffix?: string;
   readOnly?: boolean;
 }) {
+  const [text, setText] = useState(fmt(value));
+  const [focused, setFocused] = useState(false);
+  const prevValue = useRef(value);
+
+  // Sync formatted display when value changes externally (not while editing)
+  useEffect(() => {
+    if (!focused && value !== prevValue.current) {
+      setText(fmt(value));
+    }
+    prevValue.current = value;
+  }, [value, focused]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const raw = e.target.value;
+    setText(raw);
+    const normalized = raw.replace(/\s/g, "").replace(",", ".");
+    const num = parseFloat(normalized);
+    if (!isNaN(num)) onChange?.(num);
+    else if (normalized === "" || normalized === ".") onChange?.(0);
+  };
+
+  const handleBlur = () => {
+    setFocused(false);
+    setText(fmt(value));
+  };
+
   return (
     <div>
       <label className="mb-1.5 flex items-center text-sm font-medium text-graphite">
@@ -61,13 +87,10 @@ function InputField({
         <input
           type="text"
           inputMode="decimal"
-          value={fmt(value)}
-          onChange={(e) => {
-            const raw = e.target.value.replace(/[^\d.,]/g, "").replace(",", ".");
-            const num = parseFloat(raw);
-            if (!isNaN(num)) onChange?.(num);
-            else if (raw === "" || raw === ".") onChange?.(0);
-          }}
+          value={focused ? text : fmt(value)}
+          onFocus={() => setFocused(true)}
+          onBlur={handleBlur}
+          onChange={handleChange}
           className="w-full rounded-md border border-grey-light px-4 py-2.5 text-graphite placeholder:text-steel/50 focus:border-orange focus:outline-none focus:ring-2 focus:ring-orange/20"
         />
       )}
@@ -119,7 +142,7 @@ export default function KalkylatorPage() {
   // Indata
   const [dealValue, setDealValue] = useState(100000);
   const [mqlRate, setMqlRate] = useState(1);
-  const [sqlRate, setSqlRate] = useState(2);
+  const [sqlRate, setSqlRate] = useState(3);
   const [dealRate, setDealRate] = useState(0);
   const [outreach, setOutreach] = useState(10000);
   const [portalPct, setPortalPct] = useState(15);
