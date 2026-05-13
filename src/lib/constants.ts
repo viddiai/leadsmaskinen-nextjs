@@ -111,21 +111,6 @@ export const PACKAGES = {
   },
 } as const;
 
-export const ROI_STATS = [
-  { value: "100 000 kr", label: "Genomsnittligt affärsvärde" },
-  { value: "150", label: "Marketing Qualified Leads" },
-  { value: "45", label: "Sales Qualified Leads" },
-  { value: "23", label: "Stängda affärer" },
-] as const;
-
-export const ROI_RESULT = {
-  revenue: "2 250 000 kr",
-  investment: "310 000 kr",
-  savings: "374 400 kr",
-  profit: "739 400 kr",
-  roi: "338%",
-} as const;
-
 export const COMPARISON = [
   {
     dimension: "Betalning",
