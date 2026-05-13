@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useId } from "react";
 import { fmt } from "@/lib/formatters";
 
 interface CalculatorInputProps {
@@ -21,6 +21,7 @@ export function CalculatorInput({
   const [text, setText] = useState(fmt(value));
   const [focused, setFocused] = useState(false);
   const prevValue = useRef(value);
+  const id = useId();
 
   useEffect(() => {
     if (!focused && value !== prevValue.current) {
@@ -40,11 +41,12 @@ export function CalculatorInput({
 
   return (
     <div>
-      <label className="mb-1.5 flex items-center text-sm font-medium text-white">
+      <label htmlFor={id} className="mb-1.5 flex items-center text-sm font-medium text-white">
         {label}
         {suffix && <span className="ml-1 text-white/40">({suffix})</span>}
       </label>
       <input
+        id={id}
         type="text"
         inputMode="decimal"
         value={focused ? text : fmt(value)}
