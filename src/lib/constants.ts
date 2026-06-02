@@ -79,7 +79,6 @@ export const PACKAGES = {
     popular: true,
     price: "75 000",
     unit: "kr",
-    priceNote: "Introduktionspris",
     delivery: "3 veckor",
     features: [
       "ICP Persona Workshop (inkluderad)",

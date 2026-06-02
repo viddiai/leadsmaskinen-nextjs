@@ -37,7 +37,9 @@ function PricingCard({
             {pkg.price}
           </span>
           <span className="ml-1 text-white/60">{pkg.unit}</span>
-          <p className="mt-1 text-sm text-white/60">{pkg.priceNote}</p>
+          {"priceNote" in pkg && pkg.priceNote && (
+            <p className="mt-1 text-sm text-white/60">{pkg.priceNote}</p>
+          )}
         </div>
 
         <div className="mb-6 flex items-center gap-2 text-sm text-white/60">
